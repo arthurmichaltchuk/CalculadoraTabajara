@@ -22,14 +22,18 @@ namespace CalculadoraTabajara.ConsoleApp
                 validarOperacao = ValidarOperacao(operacao);
             }
 
-            Console.WriteLine("Digite o primeiro número: ");
-            int primeiroNumero = Convert.ToInt32(Console.ReadLine());
+            int primeiroNumero = 0;
+            int segundoNumero = 0;
+            bool validarDivisao = true;
+            while (validarDivisao){ 
+                Console.WriteLine("Digite o primeiro número: ");
+                primeiroNumero = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Digite o segundo número: ");
-            int segundoNumero = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Digite o segundo número: ");
+                segundoNumero = Convert.ToInt32(Console.ReadLine());
 
-
-
+                validarDivisao = ValidarDivisao(primeiroNumero, segundoNumero);
+            }
             #endregion
 
             #region operacoes
@@ -54,6 +58,13 @@ namespace CalculadoraTabajara.ConsoleApp
             Console.ReadKey();
 
             #endregion
+        }
+
+        private static bool ValidarDivisao(int primeiroNumero, int segundoNumero)
+        {
+            if (primeiroNumero == 0 || segundoNumero == 0)
+                return false;
+            return true;
         }
 
         private static string pegarTipoOperacao(string operacao)
