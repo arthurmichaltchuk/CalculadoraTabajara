@@ -15,7 +15,8 @@ namespace CalculadoraTabajara.ConsoleApp
             bool validarOperacao = false;
             string operacao = "";
 
-            while (validarOperacao == false) {
+            while (validarOperacao == false)
+            {
                 Console.WriteLine("Digite a operação desejada: \n 1- somar\n 2- subtrair\n 3-dividir \n 4-multiplicar");
                 operacao = Console.ReadLine();
 
@@ -28,24 +29,37 @@ namespace CalculadoraTabajara.ConsoleApp
             Console.WriteLine("Digite o segundo número: ");
             int segundoNumero = Convert.ToInt32(Console.ReadLine());
 
-            
+
 
             #endregion
 
             #region operacoes
             int resultado = 0;
-            string operacaoFeita = "";
-            switch(operacao){
+
+            switch (operacao)
+            {
                 case "1": resultado = primeiroNumero + segundoNumero; break;
                 case "2": resultado = primeiroNumero - segundoNumero; break;
                 case "3": resultado = primeiroNumero / segundoNumero; break;
                 case "4": resultado = primeiroNumero * segundoNumero; break;
-
-                default:
-                    break;
-                
+                default: break;
             }
 
+            string operacaoFeita = pegarTipoOperacao(operacao);
+
+            #endregion
+
+            #region mostrarResultado
+
+            Console.WriteLine("O resultado da " + operacaoFeita + " foi " + resultado + "...");
+            Console.ReadKey();
+
+            #endregion
+        }
+
+        private static string pegarTipoOperacao(string operacao)
+        {
+            string operacaoFeita = "";
             switch (operacao)
             {
                 case "1": operacaoFeita = "Soma"; break;
@@ -53,15 +67,7 @@ namespace CalculadoraTabajara.ConsoleApp
                 case "3": operacaoFeita = "Divisão"; break;
                 case "4": operacaoFeita = "Multiplicação"; break;
             }
-
-            #endregion
-
-            #region mostrarResultado
-
-            Console.WriteLine("O resultado da "+operacaoFeita+" foi "+resultado+"...");
-            Console.ReadKey();
-
-            #endregion
+            return operacaoFeita;
         }
 
         public static bool ValidarOperacao(string operacao)
