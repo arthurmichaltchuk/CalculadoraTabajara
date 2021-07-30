@@ -12,8 +12,15 @@ namespace CalculadoraTabajara.ConsoleApp
         {
             #region Input
 
-            Console.WriteLine("Digite a operação desejada: \n 1- somar\n 2- subtrair\n 3-dividir \n 4-multiplicar");
-            string operacao = Console.ReadLine(); 
+            bool validarOperacao = false;
+            string operacao = "";
+
+            while (validarOperacao == false) {
+                Console.WriteLine("Digite a operação desejada: \n 1- somar\n 2- subtrair\n 3-dividir \n 4-multiplicar");
+                operacao = Console.ReadLine();
+
+                validarOperacao = ValidarOperacao(operacao);
+            }
 
             Console.WriteLine("Digite o primeiro número: ");
             int primeiroNumero = Convert.ToInt32(Console.ReadLine());
@@ -54,6 +61,13 @@ namespace CalculadoraTabajara.ConsoleApp
             Console.WriteLine(resultado);
 
             #endregion
+        }
+
+        public static bool ValidarOperacao(string operacao)
+        {
+            if (operacao != "1" || operacao != "2" || operacao != "3" || operacao != "4")
+                return false;
+            return true;
         }
     }
 }
