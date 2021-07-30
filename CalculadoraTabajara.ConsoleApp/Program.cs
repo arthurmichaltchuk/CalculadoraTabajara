@@ -51,7 +51,8 @@ namespace CalculadoraTabajara.ConsoleApp
 
             #region mostrarResultado
 
-            Console.WriteLine(resultado);
+            Console.WriteLine("O resultado da "+operacaoFeita+" foi "+resultado+"...");
+            Console.ReadKey();
 
             #endregion
         }
