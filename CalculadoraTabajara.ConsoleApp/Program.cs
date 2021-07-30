@@ -27,6 +27,7 @@ namespace CalculadoraTabajara.ConsoleApp
             int resultado = 0;
             switch(operacao){
                 case "1": resultado = primeiroNumero + segundoNumero; break;
+                case "2": resultado = primeiroNumero - segundoNumero; break;
                 
             }
 
