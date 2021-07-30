@@ -29,6 +29,10 @@ namespace CalculadoraTabajara.ConsoleApp
                 case "1": resultado = primeiroNumero + segundoNumero; break;
                 case "2": resultado = primeiroNumero - segundoNumero; break;
                 case "3": resultado = primeiroNumero / segundoNumero; break;
+                case "4": resultado = primeiroNumero * segundoNumero; break;
+
+                default:
+                    break;
                 
             }
 
