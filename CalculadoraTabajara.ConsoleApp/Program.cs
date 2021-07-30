@@ -15,11 +15,15 @@ namespace CalculadoraTabajara.ConsoleApp
             bool validarOperacao = true;
             string operacao = "";
 
-            while (validarOperacao) {
+            while (validarOperacao)
+            {
+
                 Console.WriteLine("Digite a operação desejada: \n 1- somar\n 2- subtrair\n 3-dividir \n 4-multiplicar");
                 operacao = Console.ReadLine();
 
                 validarOperacao = ValidarOperacao(operacao);
+                MensagemDeErro(validarOperacao);
+
             }
 
             Console.WriteLine("Digite o primeiro número: ");
@@ -54,6 +58,16 @@ namespace CalculadoraTabajara.ConsoleApp
             Console.ReadKey();
 
             #endregion
+        }
+
+        private static void MensagemDeErro(bool validar)
+        {
+            if (validar)
+            {
+                Console.WriteLine("Digite uma opção válida!");
+                Console.ReadLine();
+                Console.Clear();
+            }
         }
 
         private static string pegarTipoOperacao(string operacao)
