@@ -12,10 +12,10 @@ namespace CalculadoraTabajara.ConsoleApp
         {
             #region Input
 
-            bool validarOperacao = false;
+            bool validarOperacao = true;
             string operacao = "";
 
-            while (validarOperacao == false) {
+            while (validarOperacao) {
                 Console.WriteLine("Digite a operação desejada: \n 1- somar\n 2- subtrair\n 3-dividir \n 4-multiplicar");
                 operacao = Console.ReadLine();
 
@@ -66,7 +66,7 @@ namespace CalculadoraTabajara.ConsoleApp
 
         public static bool ValidarOperacao(string operacao)
         {
-            if (operacao != "1" || operacao != "2" || operacao != "3" || operacao != "4")
+            if (operacao == "1" || operacao == "2" || operacao == "3" || operacao == "4")
                 return false;
             return true;
         }
