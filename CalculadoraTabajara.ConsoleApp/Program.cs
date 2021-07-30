@@ -27,6 +27,7 @@ namespace CalculadoraTabajara.ConsoleApp
 
             #region operacoes
             int resultado = 0;
+            string operacaoFeita = "";
             switch(operacao){
                 case "1": resultado = primeiroNumero + segundoNumero; break;
                 case "2": resultado = primeiroNumero - segundoNumero; break;
@@ -36,6 +37,14 @@ namespace CalculadoraTabajara.ConsoleApp
                 default:
                     break;
                 
+            }
+
+            switch (operacao)
+            {
+                case "1": operacaoFeita = "Soma"; break;
+                case "2": operacaoFeita = "Subtração"; break;
+                case "3": operacaoFeita = "Divisão"; break;
+                case "4": operacaoFeita = "Multiplicação"; break;
             }
 
             #endregion
